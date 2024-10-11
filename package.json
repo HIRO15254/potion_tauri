@@ -1,0 +1,72 @@
+{
+  "name": "tauri_template",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src/**/*.{ts,tsx} --fix",
+    "tauri": "tauri",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@mantine/charts": "^7.13.2",
+    "@mantine/core": "^7.13.2",
+    "@mantine/dates": "^7.13.2",
+    "@mantine/form": "^7.13.2",
+    "@mantine/hooks": "^7.13.2",
+    "@mantine/modals": "^7.13.2",
+    "@mantine/notifications": "^7.13.2",
+    "@mantine/nprogress": "^7.13.2",
+    "@mantine/tiptap": "^7.13.2",
+    "@tabler/icons-react": "^3.19.0",
+    "@tauri-apps/api": ">=2.0.0",
+    "@tauri-apps/plugin-shell": ">=2.0.0",
+    "@tiptap/extension-link": "^2.8.0",
+    "@tiptap/pm": "^2.8.0",
+    "@tiptap/react": "^2.8.0",
+    "@tiptap/starter-kit": "^2.8.0",
+    "bun": "^1.1.30",
+    "dayjs": "^1.11.13",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.26.2",
+    "recharts": "2"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
+    "@eslint/js": "^9.12.0",
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-interactions": "^8.3.5",
+    "@storybook/addon-links": "^8.3.5",
+    "@storybook/addon-onboarding": "^8.3.5",
+    "@storybook/addon-styling-webpack": "^1.0.0",
+    "@storybook/blocks": "^8.3.5",
+    "@storybook/react": "^8.3.5",
+    "@storybook/react-vite": "^8.3.5",
+    "@storybook/test": "^8.3.5",
+    "@tauri-apps/cli": ">=2.0.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^9.12.0",
+    "eslint-plugin-storybook": "^0.9.0",
+    "postcss": "^8.4.47",
+    "postcss-preset-mantine": "^1.17.0",
+    "postcss-simple-vars": "^7.0.1",
+    "storybook": "^8.3.5",
+    "storybook-dark-mode": "^4.0.2",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.8.1",
+    "vite": "^5.3.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  }
+}
