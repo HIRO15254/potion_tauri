@@ -9,7 +9,7 @@ import '@mantine/notifications/styles.css';
 import '@mantine/tiptap/styles.css';
 import '@mantine/nprogress/styles.css';
 
-function App() {
+const App = () => {
   return (
     <MantineProvider>
       <CustomAppShell>

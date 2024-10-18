@@ -1,5 +1,5 @@
 {
-  "name": "tauri_template",
+  "name": "potion_tauri",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -25,6 +25,7 @@
     "@tabler/icons-react": "^3.19.0",
     "@tauri-apps/api": ">=2.0.0",
     "@tauri-apps/plugin-shell": ">=2.0.0",
+    "@tauri-apps/plugin-sql": "^2.0.0",
     "@tiptap/extension-link": "^2.8.0",
     "@tiptap/pm": "^2.8.0",
     "@tiptap/react": "^2.8.0",

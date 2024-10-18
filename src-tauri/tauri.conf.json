@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2.0.0",
-  "productName": "tauri_template",
+  "productName": "potion",
   "version": "0.1.0",
-  "identifier": "com.tauri-template.app",
+  "identifier": "com.potion.app",
   "build": {
     "beforeDevCommand": "bun run dev",
     "devUrl": "http://localhost:1420",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "tauri_template",
+        "title": "potion",
         "maximized": true,
         "resizable": true
       }
@@ -31,5 +31,10 @@
       "icons/icon.icns",
       "icons/icon.ico"
     ]
+  },
+  "plugins": {
+    "sql": {
+      "preload": ["sqlite:potion.db"]
+    }
   }
 }
