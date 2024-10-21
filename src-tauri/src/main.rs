@@ -1,6 +1,20 @@
-// Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-fn main() {
-    potion_lib::run();
+use sqlx::Sqlite;
+
+mod database;
+
+struct AppState {
+    db: sqlx::Pool<Sqlite>,
+}
+
+#[tokio::main]
+async fn main() {
+    let app = tauri::Builder::default()
+        .invoke_handler(tauri::generate_handler![])
+        .build(tauri::generate_context!())
+        .expect("error building the app");
+    let db = database::setup_db(&app).await;
+    app.manage(AppState { db });
+    app.run(|_, _| {});
 }
