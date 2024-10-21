@@ -1,9 +1,10 @@
 use sqlx::Sqlite;
+use tauri::Manager;
 use tokio::fs::OpenOptions;
 
 pub async fn setup_db(app: &tauri::App) -> sqlx::Pool<Sqlite> {
     let mut path = app
-        .path_resolver()
+        .path()
         .app_data_dir()
         .expect("could not get data_dir");
     match std::fs::create_dir_all(path.clone()) {
@@ -13,8 +14,8 @@ pub async fn setup_db(app: &tauri::App) -> sqlx::Pool<Sqlite> {
         }
     };
     path.push("db.sqlite");
-    let result = OpenOptions::new().create_new(true).write(true).open(&path);
-    match result {
+    let mut result = OpenOptions::new();
+    match result.create_new(true).write(true).open(&path).await {
         Ok(_) => println!("database file created"),
         Err(err) => match err.kind() {
             std::io::ErrorKind::AlreadyExists => println!("database file already exists"),
@@ -28,5 +29,5 @@ pub async fn setup_db(app: &tauri::App) -> sqlx::Pool<Sqlite> {
         .await
         .unwrap();
     sqlx::migrate!("./migrations").run(&db).await.unwrap();
-    Ok(db)
+    db
 }
